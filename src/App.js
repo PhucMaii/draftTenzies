@@ -44,7 +44,7 @@ export default function App() {
         setWindowWidth(prevWidth => prevWidth = window.innerWidth);
     }, [window.innerWidth]);
 
-    const customStyles = {
+    const modalStyle = {
         content: {
           top: windowWidth < 550 ? "50%" : "20%",
           left: '50%',
@@ -257,7 +257,7 @@ export default function App() {
             <h1>🔥 Record: {record === "Infinity:Infinity" ? "None" : record} 🔥</h1>
             <h3>{mode}</h3>
             <Modal 
-                style={customStyles}
+                style={modalStyle}
                 isOpen={isShowResult}
                 onRequestClose={closeResult}
             >
@@ -270,7 +270,7 @@ export default function App() {
             </Modal>
             <Modal 
                 isOpen={modalIsOpen} 
-                style={customStyles} 
+                style={modalStyle} 
             >
                 <div className="mode-container">
                     <button onClick={chooseMode}>Easy</button>

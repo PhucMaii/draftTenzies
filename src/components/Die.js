@@ -2,7 +2,7 @@ import React from "react"
 import {useState} from "react";
 
 export default function Die(props) {
-    // each array of 2 numbers is represented for its dot position
+    // [top, left]
     const dotsPositionMatrix = {
         1: [
            [50, 50] 
@@ -41,17 +41,20 @@ export default function Die(props) {
 
     const dotsElement = generateDots();
 
+    function generateDotPosition(top, left) {
+        return {
+            top: `${top}%`,
+            left: `${left}%`,
+            transform: `translateX(-${left}%) translateY(-${top}%)`
+        }
+    }
+
     function generateDots() {
         const value = props.value;
         const dotsStyle = [];
 
         for(let i = 0; i < value; i++) {
-            const style =  
-            {
-                transform:`translate(-${dotsPositionMatrix[value][i][1]}%, -${dotsPositionMatrix[value][i][0]}%)`,
-                top: dotsPositionMatrix[value][i][0] + "%", 
-                left:dotsPositionMatrix[value][i][1] + "%"
-            }
+            const style = generateDotPosition(dotsPositionMatrix[value][i][0], dotsPositionMatrix[value][i][1])
             dotsStyle.push(style);
         }
         return dotsStyle;
