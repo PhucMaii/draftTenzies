@@ -27,8 +27,14 @@ export default function App() {
 
     const [isNewRecord, setIsNewRecord] = useState(false);
 
-    const minutesRecord = localStorage.getItem('minutesRecord');
-    const secondsRecord = localStorage.getItem('secondsRecord')
+
+
+    if(localStorage.getItem("minutesRecord") === null || localStorage.getItem("secondsRecord") === null ) {
+        localStorage.setItem("minutesRecord", Infinity);
+        localStorage.setItem("secondsRecord", Infinity);
+    }    
+    let minutesRecord = localStorage.getItem('minutesRecord');
+    let secondsRecord = localStorage.getItem('secondsRecord');
     const [record, setRecord] = useState(`${minutesRecord < 10 ? "0" + minutesRecord : minutesRecord }:${secondsRecord < 10 ? "0" + secondsRecord : secondsRecord}`)
     const [modalIsOpen, setIsOpen] = useState(true);
     Modal.setAppElement("#root")
@@ -187,12 +193,12 @@ export default function App() {
         value={dice.value} />);
 
     // check if there isn't record in localStorage, set record to be an infinite number
-    useEffect(() => {
-        if(localStorage.getItem("minutesRecord") === null || localStorage.getItem("secondsRecord") === null ) {
-            localStorage.setItem("minutesRecord", Infinity);
-            localStorage.setItem("secondsRecord", Infinity);
-        }
-    }, [])
+    // useEffect(() => {
+    //     if(localStorage.getItem("minutesRecord") === null || localStorage.getItem("secondsRecord") === null ) {
+    //         localStorage.setItem("minutesRecord", Infinity);
+    //         localStorage.setItem("secondsRecord", Infinity);
+    //     }
+    // }, [])
 
     useEffect(() => {
         startInterval();

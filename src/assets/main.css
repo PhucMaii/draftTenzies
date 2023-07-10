@@ -98,3 +98,15 @@ main {
 .result-container{
     padding: 10px;
 }
+
+@media only screen and (max-width: 550) {
+    .die{
+        width: 60px;
+        height: 60px
+    }
+
+    .die-dot{
+        width: 10px;
+        height: 10px;
+    }
+}
