@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/draftTenzies/static/css/main.1ee0d20d.css",
-    "main.js": "/draftTenzies/static/js/main.7f64685c.js",
+    "main.js": "/draftTenzies/static/js/main.8daab1e5.js",
     "index.html": "/draftTenzies/index.html",
     "main.1ee0d20d.css.map": "/draftTenzies/static/css/main.1ee0d20d.css.map",
-    "main.7f64685c.js.map": "/draftTenzies/static/js/main.7f64685c.js.map"
+    "main.8daab1e5.js.map": "/draftTenzies/static/js/main.8daab1e5.js.map"
   },
   "entrypoints": [
     "static/css/main.1ee0d20d.css",
-    "static/js/main.7f64685c.js"
+    "static/js/main.8daab1e5.js"
   ]
 }
