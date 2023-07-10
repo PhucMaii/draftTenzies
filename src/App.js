@@ -192,14 +192,6 @@ export default function App() {
         isHeld={dice.isHeld} 
         value={dice.value} />);
 
-    // check if there isn't record in localStorage, set record to be an infinite number
-    // useEffect(() => {
-    //     if(localStorage.getItem("minutesRecord") === null || localStorage.getItem("secondsRecord") === null ) {
-    //         localStorage.setItem("minutesRecord", Infinity);
-    //         localStorage.setItem("secondsRecord", Infinity);
-    //     }
-    // }, [])
-
     useEffect(() => {
         startInterval();
 
@@ -255,7 +247,7 @@ export default function App() {
     return (
         <main className="main-container">
             {isNewRecord && <Confetti />}
-            <h1>🔥 Record: {record} 🔥</h1>
+            <h1>🔥 Record: {record === "Infinity:Infinity" ? "None" : record} 🔥</h1>
             <h3>{mode}</h3>
             <Modal 
                 style={customStyles}
@@ -263,9 +255,9 @@ export default function App() {
                 onRequestClose={closeResult}
             >
                 <div className="result-container">
-                    <h1>{isNewRecord ? "Congratulations!!! You just set the new record 🎉" : `Result! Keep going to break our record 🔥` }</h1>
+                    <h1>{isNewRecord ? "Congratulations!!! You just set the new record 🎉" : `Keep going to break our record 🔥` }</h1>
                     <h2>Count: {counter}</h2>
-                    <h2>{minutes < 10 ? "0" + minutes : minutes}:{seconds < 10 ? "0"+seconds : seconds}</h2>
+                    <h2>{minutes < 10 ? "0" + minutes : minutes}:{seconds < 10 ? "0" + seconds : seconds}</h2>
     
                 </div>
             </Modal>
