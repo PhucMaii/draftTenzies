@@ -262,7 +262,7 @@ export default function App() {
                 onRequestClose={closeResult}
             >
                 <div className="result-container">
-                    <h1>{isNewRecord ? "Congratulations!!! You just set the new record 🎉" : `Keep going to break our record 🔥` }</h1>
+                    <h1>{isNewRecord ? "Congratulations!!! You just set the new record 🎉" : `Keep going to break your record 🔥` }</h1>
                     <h2>Count: {counter}</h2>
                     <h2>{minutes < 10 ? "0" + minutes : minutes}:{seconds < 10 ? "0" + seconds : seconds}</h2>
     
