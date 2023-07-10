@@ -39,6 +39,11 @@ export default function App() {
     const [modalIsOpen, setIsOpen] = useState(true);
     Modal.setAppElement("#root")
     const customStyles = {
+        overlay: {
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+        },
         content: {
           top: '20%',
           left: '50%',
