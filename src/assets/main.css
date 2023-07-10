@@ -99,7 +99,7 @@ main {
     padding: 10px;
 }
 
-@media only screen and (max-width: 550) {
+@media only screen and (max-width: 550px) {
     .die{
         width: 60px;
         height: 60px
