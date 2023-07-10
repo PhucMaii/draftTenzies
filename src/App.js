@@ -37,15 +37,16 @@ export default function App() {
     let secondsRecord = localStorage.getItem('secondsRecord');
     const [record, setRecord] = useState(`${minutesRecord < 10 ? "0" + minutesRecord : minutesRecord }:${secondsRecord < 10 ? "0" + secondsRecord : secondsRecord}`)
     const [modalIsOpen, setIsOpen] = useState(true);
-    Modal.setAppElement("#root")
+    Modal.setAppElement("#root");
+    const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+
+    useEffect(() => {
+        setWindowWidth(prevWidth => prevWidth = window.innerWidth);
+    }, [window.innerWidth]);
+
     const customStyles = {
-        overlay: {
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
-        },
         content: {
-          top: '20%',
+          top: windowWidth < 550 ? "50%" : "20%",
           left: '50%',
           right: 'auto',
           bottom: 'auto',
@@ -55,6 +56,7 @@ export default function App() {
           border: "none",
           boxShadow:" rgba(100, 100, 111, 0.2) 0px 7px 29px 0px",
           textAlign: "center",
+          outline: "none",
         },
     };
 
