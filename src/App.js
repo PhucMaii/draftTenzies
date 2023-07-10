@@ -95,8 +95,8 @@ export default function App() {
 
     function startInterval() {
         const easyTime = 4000; 
-        const normalTime = 2000;
-        const hardTime = 800;
+        const normalTime = 1500;
+        const hardTime = 700;
 
         let timeId;
         let count = 0; // erase later
